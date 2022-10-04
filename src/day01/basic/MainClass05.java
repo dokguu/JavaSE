@@ -22,6 +22,7 @@ public class MainClass05 {
 		//디모션의 예
 		float iFloat2 = (float)iDouble;
 		
+		System.out.println("iInt : " + iInt);
 		
 	}
 	

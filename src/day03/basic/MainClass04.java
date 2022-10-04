@@ -1,65 +1,60 @@
 package day03.basic;
 
+import java.util.Iterator;
+
 /*
+0 00
+1 01 10
+2 20 11 02
+3 03 12 21 30 
 
+https://github.com/dobby8282/JavaSE
 
-3번
-    
-0   *
-1  ***
-2 *****
-3*******
-4 *****
-5  ***
-6   *
- 
-0*******
-1*******
-2*******
-3*******
-4*******
-5*******
-6*******
-    ★
-    *   
-   ***  
-  ***** 
- *******
-4  | |
-6  
-
-
-
- 
-
- */
+*/
 public class MainClass04 {
-
 	public static void main(String[] args) {
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
-				if(i < 4) {		// 위에 * 모양
-					if (j + i < 7 / 2) {
-						System.out.print(" ");
-					} else if (j - i > 7 / 2 ) {
-						System.out.print(" ");
-					} else {
-						System.out.print("*");
+		
+		int[][] array = new int[7][7];
+		
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				array[i][j] = i * 7  + j + 1;
+			}
+		}
+		
+		for (int i = 0; i < 14; i++) {
+			if (i < 7) {
+				for (int j = 0; j < i + 1 ; j++) {
+					if(i % 2 < 1) { // 홀수라인
+						System.out.print(array[i - j][j] + " ");
+					} else { // 짝수라인
+						System.out.print(array[j][i - j] + " ");
 					}
-				} else {		// 아래 * 모양
-					if(j < i-3) {
-						System.out.print(" ");
-					}else if(i+j >9) {
-						System.out.print(" ");
-					}else {
-						System.out.print("*");
+				} 
+			} else {
+				for (int j = 1; j < 14 - i; j++) {
+					if(i % 2 < 1) { // 홀수라인
+						System.out.print(array[7-j][i-7+j] + " ");
+					} else { // 짝수라인
+						System.out.print(array[j+i-7][7-j] + " ");
 					}
 				}
 			}
-			System.out.println(); // 개행
+			
+			System.out.println();
 		}
+				
+		
 	}
 
 }
+
+
+
+
+
+
+
+
 
 
