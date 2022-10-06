@@ -34,9 +34,12 @@ public class MainClass01 {
 		try {
 			result = num1/num2;
 			System.out.println("실행결과 : " + result);
+			
+			
 		} catch (Exception e) {
 			System.out.println("어떤한 수를 0으로 나눌 수 없습니다.");
 			e.printStackTrace();
+			System.out.println("무슨에러야? " + e.getMessage());
 		}
 		
 		
